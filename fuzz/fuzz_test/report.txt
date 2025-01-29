@@ -1,0 +1,4 @@
+FUZZING REPORT
+\nNumber of SegFaults: 
+0
+\nSegFault Data: 

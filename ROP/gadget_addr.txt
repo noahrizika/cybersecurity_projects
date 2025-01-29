@@ -1,0 +1,44 @@
+in GDB:
+7ffff6f16000-7ffff7087000 r-xp 00024000 103:03 12061971                  /usr/lib/libc.so.6
+7ffff6f16000-7ffff7087000 r-xp 00024000 103:03 12061971                  /usr/lib/libc.so.6
+
+0x7ffff6f16000 + 0x_____ = actual addr
+2618b -> 0x7ffff6f3c18b
+2620b -> 0x7ffff6f3c20b
+262ff -> 0x7ffff6f3c2ff
+26450 -> 0x7ffff6f3c450
+26a44 -> 0x7ffff6f3ca44
+
+   2618b:       64 48 03 04 25 00 00    add    %fs:0x0,%rax
+   26192:       00 00 
+   26194:       c3  
+
+   2620b:       48 83 c4 30             add    $0x30,%rsp
+   2620f:       5b                      pop    %rbx
+   26210:       41 5c                   pop    %r12
+   26212:       5d                      pop    %rbp
+   26213:       c3                      ret
+
+   262ff:       48 83 c4 28             add    $0x28,%rsp
+   26303:       5b                      pop    %rbx
+   26304:       41 5c                   pop    %r12
+   26306:       41 5d                   pop    %r13
+   26308:       41 5e                   pop    %r14
+   2630a:       41 5f                   pop    %r15
+   2630c:       5d                      pop    %rbp
+   2630d:       c3                      ret
+
+   26450:       48 8b 05 99 08 1c 00    mov    0x1c0899(%rip),%rax        # 1e6cf0 <_IO_wfile_jumps@@GLIBC_2.2.5+0xb08>
+   26457:       64 c7 00 09 00 00 00    movl   $0x9,%fs:(%rax)
+   2645e:       b8 ff ff ff ff          mov    $0xffffffff,%eax
+   26463:       c3                      ret
+
+   26a44:       b8 08 00 00 00          mov    $0x8,%eax
+   26a49:       5b                      pop    %rbx
+   26a4a:       41 5c                   pop    %r12
+   26a4c:       41 5d                   pop    %r13
+   26a4e:       41 5e                   pop    %r14
+   26a50:       41 5f                   pop    %r15
+   26a52:       5d                      pop    %rbp
+   26a53:       c3                      ret
+
